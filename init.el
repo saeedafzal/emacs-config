@@ -22,7 +22,7 @@
 			 '(font . "JetBrainsMono Nerd Font-14")
 			 '(font . "JetBrainsMono NF-14"))
 
-;; Melpa
+;; melpa
 (require 'package)
 (add-to-list 'package-archives
 			 '("melpa" . "https://melpa.org/packages/"))
@@ -31,7 +31,7 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;; Evil
+;; evil
 (setq evil-want-keybinding nil)
 
 (use-package evil
@@ -43,10 +43,22 @@
   :config
   (evil-collection-init))
 
-;; Magit
+;; magit
 (use-package magit)
 
-;; Go mode
-(use-package go-mode
+;; org-roam
+(use-package org-roam
+  :custom
+  (org-roam-directory "~/Documents/Notes/org-mode")
+  :bind (("C-c n f" . org-roam-node-find)
+		 ("C-c n i" . org-roam-node-insert))
   :config
-  (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode)))
+  (org-roam-db-autosync-mode))
+
+;; go-mode
+(use-package go-mode
+  :mode ("\\.go\\'" . go-mode))
+
+;; kotlin-mode
+(use-package kotlin-mode
+  :mode ("\\.kt\\'" . kotlin-mode))
