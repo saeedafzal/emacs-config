@@ -7,7 +7,7 @@
 (setq make-backup-files nil) ; Disable ~ files
 (setq auto-save-default nil) ; Disabel #autosave#
 (setq scroll-step 1
-	  scroll-conservatively 10000)
+      scroll-conservatively 10000)
 
 (setq-default tab-width 4)
 
@@ -18,14 +18,17 @@
 (global-display-line-numbers-mode)
 (load-theme 'modus-vivendi t)
 
+(global-whitespace-mode t)
+(setq whitespace-style '(face spaces tabs trailing space-mark tab-mark))
+
 (add-to-list 'default-frame-alist
-			 '(font . "JetBrainsMono Nerd Font-14")
-			 '(font . "JetBrainsMono NF-14"))
+             '(font . "JetBrainsMono Nerd Font-14")
+             '(font . "JetBrainsMono NF-14"))
 
 ;; melpa
 (require 'package)
 (add-to-list 'package-archives
-			 '("melpa" . "https://melpa.org/packages/"))
+             '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
 (require 'use-package)
@@ -51,9 +54,21 @@
   :custom
   (org-roam-directory "~/Documents/Notes/org-mode")
   :bind (("C-c n f" . org-roam-node-find)
-		 ("C-c n i" . org-roam-node-insert))
+         ("C-c n i" . org-roam-node-insert))
   :config
   (org-roam-db-autosync-mode))
+
+(use-package org-modern
+  :hook (org-mode . org-modern-mode)
+  :config (setq org-modern-star '("●" "◉" "○" "◆")))
+
+(use-package ox-reveal
+  :after org
+  :config (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js"))
+
+;; wakatime-mode
+(use-package wakatime-mode
+  :config (global-wakatime-mode))
 
 ;; go-mode
 (use-package go-mode
@@ -62,3 +77,7 @@
 ;; kotlin-mode
 (use-package kotlin-mode
   :mode ("\\.kt\\'" . kotlin-mode))
+
+;; rust-mode
+(use-package rust-mode
+  :mode ("\\.rs\\'" . rust-mode))
