@@ -38,11 +38,12 @@
 (setq use-package-always-ensure t)
 
 ;; evil
-(setq evil-want-keybinding nil)
-
 (use-package evil
+  :init
+  (setq evil-want-keybinding nil)
   :config
-  (evil-mode))
+  (evil-mode)
+  (evil-select-search-module 'evil-search-module 'evil-search))
 
 (use-package evil-collection
   :after evil
