@@ -18,6 +18,9 @@
 (global-display-line-numbers-mode)
 (load-theme 'modus-vivendi t)
 
+(set-frame-parameter nil 'alpha-background 70)
+(add-to-list 'default-frame-alist '(alpha-background . 70))
+
 (global-whitespace-mode t)
 (setq whitespace-style '(face spaces tabs trailing space-mark tab-mark))
 
