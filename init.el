@@ -25,8 +25,8 @@
 (setq whitespace-style '(face spaces tabs trailing space-mark tab-mark))
 
 (add-to-list 'default-frame-alist
-             '(font . "JetBrainsMono Nerd Font-14")
-             '(font . "JetBrainsMono NF-14"))
+             '(font . "JetBrainsMono Nerd Font-12")
+             '(font . "JetBrainsMono NF-12"))
 
 ;; melpa
 (require 'package)
