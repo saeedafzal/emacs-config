@@ -11,6 +11,8 @@
 
 (setq-default tab-width 4)
 
+(setf dired-kill-when-opening-new-dired-buffer t)
+
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
