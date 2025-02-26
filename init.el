@@ -45,7 +45,8 @@
   (setq evil-want-keybinding nil)
   :config
   (evil-mode)
-  (evil-select-search-module 'evil-search-module 'evil-search))
+  (evil-select-search-module 'evil-search-module 'evil-search)
+  (evil-set-undo-system 'undo-redo))
 
 (use-package evil-collection
   :after evil
@@ -53,7 +54,8 @@
   (evil-collection-init))
 
 ;; magit
-(use-package magit)
+(use-package magit
+  :config (setq magit-bury-buffer-function #'kill-buffer))
 
 ;; org-roam
 (use-package org-roam
