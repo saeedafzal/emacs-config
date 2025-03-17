@@ -10,8 +10,8 @@
  ;; Strings: colored #b4f6c0.
  `(font-lock-string-face ((t (:foreground "#b4f6c0"))))
  ;; Override all other common font-lock faces to default white.
- `(font-lock-comment-face ((t (:foreground "#E0E2EA"))))
- `(font-lock-comment-delimiter-face ((t (:foreground "#E0E2EA"))))
+ '(font-lock-comment-face ((t (:foreground "#9b9ea4"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "#9b9ea4"))))
  `(font-lock-constant-face ((t (:foreground "#E0E2EA"))))
  `(font-lock-builtin-face ((t (:foreground "#E0E2EA"))))
  `(font-lock-function-name-face ((t (:foreground "#E0E2EA"))))
