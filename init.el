@@ -18,10 +18,14 @@
 (scroll-bar-mode 0)
 (ido-mode)
 (global-display-line-numbers-mode)
-(load-theme 'modus-vivendi t)
+;; (load-theme 'modus-vivendi t)
 
-(set-frame-parameter nil 'alpha-background 70)
-(add-to-list 'default-frame-alist '(alpha-background . 70))
+(load-file (expand-file-name "simple-dark-theme.el" user-emacs-directory))
+(enable-theme 'simple-dark)
+;;(load-theme 'simple-dark t)
+
+(set-frame-parameter nil 'alpha-background 90)
+(add-to-list 'default-frame-alist '(alpha-background . 90))
 
 (global-whitespace-mode t)
 (setq whitespace-style '(face spaces tabs trailing space-mark tab-mark))
